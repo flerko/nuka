@@ -534,10 +534,10 @@ function (_React$Component) {
     key: "startAutoplay",
     value: function startAutoplay() {
       if (this.props.autoplayInterval === 0) {
-        return this.autoplayIterator();
+        this.autoplayIterator();
+      } else {
+        this.autoplayID = setInterval(this.autoplayIterator, this.props.autoplayInterval);
       }
-
-      return this.autoplayID = setInterval(this.autoplayIterator, this.props.autoplayInterval);
     }
   }, {
     key: "resetAutoplay",
